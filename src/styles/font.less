@@ -1,0 +1,55 @@
+@import "./variables.less";
+h2, h3, h4, .title {
+  &+.title, &+h2, &+h3, &+h4 {
+    margin-top: 0.5rem;
+  }
+}
+h1 {
+  display: none;
+}
+h2 {
+  font-size: 56px;
+  line-height: 1
+}
+h3 {
+  font-size: 40px;
+  margin-bottom: 1em;
+}
+h4 {
+  font-size: 34px;
+}
+.title {
+  &._lg {
+    font-size: 30px;
+  }
+  &._md {
+    font-size: 20px;
+  }
+  &._sm {
+    font-size: 14px;
+  }
+}
+.text {
+  &-orange {
+    color: @color-orange;
+  }
+  &-dark-blue {
+    color: @color-dark-blue;
+  }
+}
+.text {
+  &-900 {
+    font-weight: 900;
+  }
+  &-800 {
+    font-weight: 800;
+  }
+}
+.text {
+  &-center {
+    text-align: center;
+  }
+  &-up {
+    text-transform: uppercase;
+  }
+}
