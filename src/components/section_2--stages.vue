@@ -204,44 +204,115 @@ export default {
         return true;
       }
     },
-    animationCar(direction) {
+    animationCar(slide, direction) {
       const car = this.$refs.car;
       const svg = this.$refs.car_animation;
 
       let svgHeight = svg.height.animVal.value;
       let carHeight = car.width.animVal.value;
       let step = (svgHeight + carHeight) / 2 - carHeight;
-
-      //надо получить координату translate
       let startCarPosition = parseInt(
         getComputedStyle(this.$refs.car).transform.split(",")[5]
       );
 
-      console.log(startCarPosition);
+      let checkTexture = this.slide - slide;
 
-      animate({
-        duration: 1000,
-        timing: function (timeFraction) {
-          return timeFraction;
-        },
-        draw: function (progress) {
-          if (!direction) {
-            car.style.transform = `translate(-464px, ${
-              startCarPosition + step * progress
-            }px) rotate(-90deg)`;
-          } else {
-            car.style.transform = `translate(-464px, ${
-              startCarPosition - step * progress
-            }px) rotate(-90deg)`;
-          }
-        },
-      });
-      console.log(step);
+      if (checkTexture == -2 || checkTexture == 2) {
+        if (!direction) {
+          let test = new Promise((resolve) => {
+            animate({
+              duration: 500,
+              timing: function (timeFraction) {
+                return timeFraction;
+              },
+              draw: function (progress) {
+                car.style.transform = `translate(-464px, ${
+                  startCarPosition + carHeight * progress
+                }px) rotate(-90deg)`;
+                if (progress == 1) {
+                  resolve();
+                }
+              },
+            });
+          });
+          test
+            .then(() => {
+              car.style.transform = `translate(-464px, ${0}px) rotate(-90deg)`;
+              startCarPosition = 0;
+            })
+            .then(() => {
+              animate({
+                duration: 500,
+                timing: function (timeFraction) {
+                  return timeFraction;
+                },
+                draw: function (progress) {
+                  car.style.transform = `translate(-464px, ${
+                    startCarPosition + carHeight * progress
+                  }px) rotate(-90deg)`;
+                },
+              });
+            });
+        } else {
+          let test2 = new Promise((resolve) => {
+            animate({
+              duration: 500,
+              timing: function (timeFraction) {
+                return timeFraction;
+              },
+              draw: function (progress) {
+                car.style.transform = `translate(-464px, ${
+                  startCarPosition - carHeight * progress
+                }px) rotate(-90deg)`;
+                if (progress == 1) {
+                  resolve();
+                }
+              },
+            });
+          });
+          test2
+            .then(() => {
+              car.style.transform = `translate(-464px, ${538}px) rotate(-90deg)`;
+              startCarPosition = 538;
+            })
+            .then(() => {
+              animate({
+                duration: 500,
+                timing: function (timeFraction) {
+                  return timeFraction;
+                },
+                draw: function (progress) {
+                  car.style.transform = `translate(-464px, ${
+                    startCarPosition - carHeight * progress
+                  }px) rotate(-90deg)`;
+                },
+              });
+            });
+        }
+      } else {
+        animate({
+          duration: 1000,
+          timing: function (timeFraction) {
+            return timeFraction;
+          },
+          draw: function (progress) {
+            if (!direction) {
+              car.style.transform = `translate(-464px, ${
+                startCarPosition + step * progress
+              }px) rotate(-90deg)`;
+            } else {
+              car.style.transform = `translate(-464px, ${
+                startCarPosition - step * progress
+              }px) rotate(-90deg)`;
+            }
+          },
+        });
+      }
     },
     onSlideStart(slide) {
       let sliderDirection = this.calcSliderDirection(slide);
       this.animationLines(slide, sliderDirection);
-      this.animationCar(sliderDirection);
+      this.animationCar(slide, sliderDirection);
       this.sliding = true;
     },
     onSlideEnd() {
