@@ -161,6 +161,13 @@ export default {
     animationLines(slide, direction) {
       let currentLine;
       if (direction == true) {
+        if (this.slide - slide == -2) {
+          let toLines = document.querySelectorAll(".line");
+          toLines.forEach((line) => {
+            line.style.strokeDashoffset = 0;
+          });
+        }
+
         currentLine = document.querySelector(`#line_${this.slide}`);
       } else {
         currentLine = document.querySelector(`#line_${slide}`);
