@@ -4,7 +4,8 @@
     <section_1 />
     <section_2 />
     <section_3 />
-    <section_5 />
+    <section_4 />
+    <section_footer />
   </div>
 </template>
 
@@ -19,7 +20,8 @@ import navbar from "@/components/navbar";
 import section_1 from "@/components/section_1--slider";
 import section_2 from "@/components/section_2--stages";
 import section_3 from "@/components/section_3--priceList";
-import section_5 from "@/components/section_5--icons";
+import section_4 from "@/components/section_4--icons";
+import section_footer from "@/components/section_5--footer";
 
 import buttonAnimation from "@/scripts/button";
 
@@ -32,11 +34,12 @@ export default {
     section_1,
     section_2,
     section_3,
-    section_5
+    section_4,
+    section_footer,
   },
   mounted() {
-    buttonAnimation()
-  }
+    buttonAnimation();
+  },
 };
 </script>
 
@@ -52,7 +55,12 @@ body {
   color: @color-white;
   background: @color-dark-blue;
   font-size: 16px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 400;
+
+  .logo {
+    max-width: 170px;
+    width: 100%;
+  }
 }
 </style>

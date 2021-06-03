@@ -3,7 +3,7 @@
     <div class="grid">
       <b-navbar toggleable="lg">
         <b-navbar-brand href="#">
-          <img src="@/assets/logo_white.png" alt="" id="logo" />
+          <img src="@/assets/logo_white.png" alt="" class="logo" />
         </b-navbar-brand>
 
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -33,20 +33,13 @@ export default {
 @import "../styles/variables.less";
 
 .section_0--menu {
-  position: fixed;
+  position: fixed !important;
   top: 0;
   width: 100%;
   padding: 0 !important;
   height: auto;
   z-index: 100;
   background: #1d222f;
-
-  .navbar-brand {
-    img {
-      max-width: 170px;
-      width: 100%;
-    }
-  }
 
   #nav-collapse {
     justify-content: flex-end;

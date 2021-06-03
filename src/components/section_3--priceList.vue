@@ -118,7 +118,6 @@ export default {
       button {
         max-width: 100%;
         width: 100%;
-        height: auto;
         margin-top: 1em;
 
         p {
