@@ -160,17 +160,30 @@ export default {
   methods: {
     animationLines(slide, direction) {
       let currentLine;
+      let isCross;
       if (direction == true) {
+        isCross = this.slide - slide;
         currentLine = document.querySelector(`#line_${this.slide}`);
       } else {
         currentLine = document.querySelector(`#line_${slide}`);
       }
 
       if (!currentLine) {
+        if (isCross == -2) {
+          document
+            .querySelectorAll(".line")
+            .forEach((item) => (item.style.strokeDashoffset = 0));
+        } else {
+          document
+            .querySelectorAll(".line")
+            .forEach((item) => (item.style.strokeDashoffset = 160));
+        }
+        return;
+      }
+      if (isCross == -2) {
         document
           .querySelectorAll(".line")
-          .forEach((item) => (item.style.strokeDashoffset = 160));
-        return;
+          .forEach((item) => (item.style.strokeDashoffset = 0));
       }
 
       let startPositionCurrentLine = parseInt(
