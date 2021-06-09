@@ -128,13 +128,78 @@
           <b-carousel
             id="carousel_2"
             v-model="slide"
-            :interval="10000"
+            :interval="100000"
             controls
             indicators
             @sliding-start="onSlideStart"
             @sliding-end="onSlideEnd"
           >
-            <b-carousel-slide> Lorem ipsum dolor 1 </b-carousel-slide>
+            <b-carousel-slide>
+              <p class="title _lg slider_title">Свяжитесь с{{ "\xa0" }}нами</p>
+              <a
+                href="tel:+79096725085"
+                class="text-800 text-content _phone phone_1"
+                >+7{{ "\xa0" }}(012){{ "\xa0" }}345-65-89</a
+              >
+              <a
+                href="tel:+79096725085"
+                class="text-800 text-content _phone phone_2"
+                >+7{{ "\xa0" }}(012){{ "\xa0" }}345-65-89</a
+              >
+              <a href="mailto:info@pravit.ru" class="text-content _mail"
+                >info@pravit.ru</a
+              >
+              <div class="line line_1"></div>
+              <p class="text-center title _sm text">
+                или оставьте заявку и{{ "\xa0" }}мы{{ "\xa0" }}вам перезоним
+              </p>
+              <div class="line line_2"></div>
+              <b-form @submit.prevent="onSubmit" class="form">
+                <b-form-group id="group-name" label="" label-for="name">
+                  <b-form-input
+                    id="name"
+                    v-model="form.name"
+                    placeholder="Введите ФИО"
+                    required
+                  ></b-form-input>
+                </b-form-group>
+
+                <b-form-group
+                  id="group-email"
+                  label=""
+                  label-for="email"
+                  description="Мы никому не передадим Ваши данные"
+                >
+                  <b-form-input
+                    id="email"
+                    v-model="form.email"
+                    type="email"
+                    placeholder="asd@asd.com"
+                    required
+                  ></b-form-input>
+                </b-form-group>
+
+                <b-form-group id="input-group-4">
+                  <b-form-checkbox-group
+                    v-model="form.checked"
+                    id="security"
+                    required
+                  >
+                    <b-form-checkbox value="security"
+                      ><span class="title _sm"
+                        >Нажимая на кнопку, я даю согласие на обработку
+                        <a>персональных данных</a></span
+                      >
+                    </b-form-checkbox>
+                  </b-form-checkbox-group>
+                </b-form-group>
+
+                <b-button type="submit" data-shiny-button class="shiny-button">
+                  <p class="text-800 title _md">Получить прайс-лист</p>
+                  <canvas></canvas>
+                </b-button>
+              </b-form>
+            </b-carousel-slide>
 
             <b-carousel-slide> Lorem ipsum dolor 2 </b-carousel-slide>
 
@@ -155,9 +220,17 @@ export default {
     return {
       slide: 0,
       sliding: null,
+      form: {
+        email: "",
+        name: "",
+        checked: [],
+      },
     };
   },
   methods: {
+    onSubmit() {
+      console.log(JSON.stringify(this.form));
+    },
     animationLines(slide, direction) {
       let currentLine;
       let isCross;
@@ -394,6 +467,56 @@ export default {
 
         .carousel-item {
           height: 100%;
+
+          .carousel-caption {
+            position: static;
+            padding: 0;
+            left: auto;
+            right: auto;
+            text-align: left;
+            display: grid;
+
+            .line {
+              width: 100%;
+              height: 1px;
+              background: rgba(255, 255, 255, 0.16);
+            }
+          }
+          &[aria-posinset="1"] .carousel-caption {
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-auto-rows: min-content;
+            gap: 0px 0px;
+            grid-template-areas:
+              "slider_title slider_title slider_title"
+              "phone_1 phone_2 _mail"
+              "line_1 text line_2"
+              "form form form";
+
+            .title {
+              grid-area: slider_title;
+            }
+            .phone_1 {
+              grid-area: phone_1;
+            }
+            .phone_2 {
+              grid-area: phone_2;
+            }
+            ._mail {
+              grid-area: _mail;
+            }
+            .line_1 {
+              grid-area: line_1;
+            }
+            .line_2 {
+              grid-area: line_2;
+            }
+            .text {
+              grid-area: text;
+            }
+            .form {
+              grid-area: form;
+            }
+          }
         }
       }
     }
