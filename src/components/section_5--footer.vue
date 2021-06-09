@@ -21,21 +21,21 @@
     <div class="item__absolute">
       <h3 class="title">Контактные данные</h3>
       <div class="line"></div>
-      <a href="tel:+79096725085" class="text-800 text-content _phone phone_1"
+      <a href="tel:+79096725085" class="text-800 text-content phone phone_1"
         >+7{{ "\xa0" }}(012){{ "\xa0" }}345-65-89</a
       >
-      <a href="tel:+79096725085" class="text-800 text-content _phone phone_2"
+      <a href="tel:+79096725085" class="text-800 text-content phone phone_2"
         >+7{{ "\xa0" }}(012){{ "\xa0" }}345-65-89</a
       >
-      <p class="text-content _time time">
+      <p class="text-content time">
         Пн-Пт, с{{ "\xa0" }}8{{ "\xa0" }}до{{ "\xa0" }}17
       </p>
-      <a href="mailto:info@pravit.ru" class="text-content _mail"
+      <a href="mailto:info@pravit.ru" class="text-content mail"
         >info@pravit.ru</a
       >
       <a
         href="https://yandex.ru/maps/?um=constructor%3A7a54f0cdf6b8914a865773a3392cac4b5086b339633132c2f9f1c42314dcf6d3&source=constructorLink"
-        class="text-content _address"
+        class="text-content address"
         target="_blank"
         >Самарская область, Тольятти, Обводное шоссе,{{ "\xa0" }}71</a
       >
@@ -90,23 +90,25 @@ export default {
     background: linear-gradient(223.4deg, #272e3f -15.8%, #3b455e 285.79%);
     border-radius: 4px;
     max-width: 926px;
-    height: 324px;
+    height: 351px;
     width: 100%;
-    bottom: 0;
+    bottom: -5%;
     left: 50%;
     transform: translate(-50%, -30%);
     padding: 3em;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+    grid-auto-rows: auto;
+    gap: 20px 10px;
     grid-template-areas:
       "title title title"
       "line line line"
-      "phone_1 time _address"
-      "phone_2 _mail button";
+      "phone_1 time address"
+      "phone_2 mail button";
 
     &>.title {
       grid-area: title;
+      margin-bottom: 10px;
     }
     &>.line {
       grid-area: line;
@@ -120,13 +122,13 @@ export default {
     &>.time {
       grid-area: time;
     }
-    .mail {
-      grid-area: _mail;
+    &>.mail {
+      grid-area: mail;
     }
-    .address {
-      grid-area: _address;
+    &>.address {
+      grid-area: address;
     }
-    .button {
+    &>.button {
       grid-area: button;
       max-width: 100%;
     }

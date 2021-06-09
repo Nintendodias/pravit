@@ -40,7 +40,7 @@
               ></b-form-input>
             </b-form-group>
 
-            <b-form-group id="input-group-4">
+            <b-form-group id="group-personal_data_2">
               <b-form-checkbox-group
                 v-model="form.checked"
                 id="security"
