@@ -1,4 +1,4 @@
-.circle {
+div.circle {
   background: radial-gradient(
     50% 50% at 50% 50%,
     rgba(32, 155, 224, 0.48) 0%,
@@ -30,5 +30,36 @@
     height: 1000px;
     left: -35%;
     top: 64%;
+  }
+}
+@media (max-width: 1024px) {
+  div.circle {
+    &.circle_1 {
+      width: 500px;
+      height: 500px;
+      left: auto;
+      top: 3%;
+      right: 0;
+    }
+    &.circle_2 {
+      width: 600px;
+      height: 600px;
+      left: -31%;
+      top: 82%;
+    }
+    &.circle_3 {
+      width: 600px;
+      height: 600px;
+      left: 25%;
+      top: 1203px;
+    }
+    &.circle_4 {
+      display: none;
+    }
+  }
+}
+@media (max-width: 768px) {
+  div.circle {
+    display: none;
   }
 }

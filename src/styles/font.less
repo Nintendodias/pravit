@@ -1,6 +1,12 @@
 @import "./variables.less";
-h2, h3, h4, .title {
-  &+.title, &+h2, &+h3, &+h4 {
+h2,
+h3,
+h4,
+.title {
+  & + .title,
+  & + h2,
+  & + h3,
+  & + h4 {
     margin-top: 0.5rem;
   }
 }
@@ -9,7 +15,7 @@ h1 {
 }
 h2 {
   font-size: 56px;
-  line-height: 1
+  line-height: 1;
 }
 h3 {
   font-size: 40px;
@@ -54,5 +60,32 @@ h4 {
   }
   &-up {
     text-transform: uppercase;
+  }
+}
+@media (max-width: 1024px) {
+  h2 {
+    font-size: 50px;
+  }
+}
+@media (max-width: 768px) {
+  h2 {
+    font-size: 36px;
+  }
+  h3 {
+    font-size: 30px;
+  }
+  h4 {
+    font-size: 25px;
+  }
+  .title {
+    &._lg {
+      font-size: 20px;
+    }
+    &._md {
+      font-size: 18px;
+    }
+    &._sm {
+      font-size: 12px;
+    }
   }
 }

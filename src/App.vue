@@ -1,5 +1,6 @@
 <template>
   <div id="app" ref="app">
+    <h1></h1>
     <navbar />
     <section_1 />
     <section_2 />
@@ -57,14 +58,6 @@ export default {
 </script>
 
 <style lang="less">
-@import "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css";
-@import "./styles/variables.less";
-@import "./styles/grid.less";
-@import "./styles/normalize.less";
-@import "./styles/font.less";
-@import "./styles/button.less";
-@import "./styles/background.less";
-
 body {
   color: @color-white;
   background: @color-dark-blue;
@@ -113,4 +106,14 @@ body {
     padding: 0 !important;
   }
 }
+@import "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css";
+@import "./styles/variables.less";
+@import "./styles/grid.less";
+@import "./styles/normalize.less";
+@import "./styles/font.less";
+@import "./styles/button.less";
+@import "./styles/background.less";
+@import "./styles/media_tab.less";
+@import "./styles/media_tab-rotate.less";
+@import "./styles/media_mob.less";
 </style>

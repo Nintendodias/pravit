@@ -1,0 +1,153 @@
+@media (max-width: 414px) {
+  .section_1--slider {
+    .carousel-caption {
+      grid-template-columns: 1.1fr !important;
+      grid-template-areas:
+        "title "
+        "text "
+        "button " !important;
+      img {
+        display: none !important;
+      }
+    }
+  }
+  .section_2--stages {
+    .section__content--grid {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "title"
+        "svg"
+        "slider";
+    }
+
+    svg#car_animation {
+      transform: rotate(-90deg);
+      width: 92% !important;
+      position: absolute;
+      top: -5%;
+      left: 0;
+
+      .anim__group {
+        .text {
+          &#text_1 {
+            transform: rotate(90deg) translate(-46%, -39.5%);
+          }
+          &#text_2 {
+            transform: rotate(90deg) translate(26%, -82%);
+          }
+          &#text_3 {
+            transform: rotate(90deg) translate(87%, -127%);
+          }
+        }
+        .number {
+          &.number_1 {
+            transform: rotate(90deg) translate(-21%, -21%);
+          }
+          &.number_2 {
+            transform: rotate(90deg) translate(63%, -66%);
+          }
+          &.number_3 {
+            transform: rotate(90deg) translate(147%, -111%);
+          }
+        }
+      }
+    }
+    .slider-container {
+      margin-top: 7em;
+
+      .carousel .carousel-inner {
+        height: 442px;
+      }
+
+      .carousel .carousel-inner {
+        .carousel-item[aria-posinset="1"] {
+          .carousel-caption {
+            grid-template-columns: 1fr 1fr !important;
+            grid-auto-rows: auto;
+            gap: 20px 20px;
+            justify-items: flex-start;
+            grid-template-areas:
+              "slider_title slider_title"
+              "phone_1 phone_2"
+              "mail mail"
+              "text text"
+              "form form";
+            .lines {
+              display: none;
+            }
+            .form {
+              grid-template-columns: 1fr;
+              grid-template-rows: repeat(4, 1fr);
+              grid-template-areas:
+                "form-name"
+                "form-tel"
+                "form-button"
+                "form-check";
+            }
+          }
+        }
+        .carousel-item[aria-posinset="2"],
+        .carousel-item[aria-posinset="3"] {
+          .carousel-caption {
+            grid-template-columns: 1fr;
+            grid-template-areas:
+              "slider_title "
+              "block_1"
+              "block_2";
+          }
+        }
+      }
+      .carousel-control-prev {
+        transform: rotate(180deg) translate(150%, -150%);
+      }
+      .carousel-control-next {
+        transform: translate(150%, 150%);
+      }
+      .carousel-indicators {
+        transform: translateY(13%);
+        bottom: -13%;
+      }
+    }
+  }
+  .section_3--priceList {
+    .section__content--grid {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        "title title"
+        "image image"
+        "pdf xls"
+        "form form";
+    }
+  }
+  .section_5--icons {
+    .section__content--grid {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas:
+        "title title"
+        "icon_1 icon_2"
+        "icon_3 icon_4";
+    }
+  }
+  .section_5--footer {
+    .section__content--grid {
+      grid-template-columns: 1fr 1fr 1.5fr !important;
+      grid-template-areas: "logo opherta politic" !important;
+
+      .title._sm {
+        font-size: 10px;
+      }
+    }
+    .item__absolute {
+      padding: 1.5em;
+      height: auto;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas:
+        "title title"
+        "line line"
+        "phone_1 phone_2"
+        "time mail"
+        "address address"
+        "button button";
+    }
+  }
+}
