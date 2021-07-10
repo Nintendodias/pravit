@@ -137,17 +137,18 @@
             <b-carousel-slide>
               <p class="title _lg text-500 slider_title">Свяжитесь с{{ "\xa0" }}нами</p>
               <a
-                href="tel:+79096725085"
+                href="tel:+79878150888"
                 class="text-800 text-content phone phone_1"
-                >+7{{ "\xa0" }}(012){{ "\xa0" }}345-65-89</a
+                >
+                +7{{ "\xa0" }}(987){{ "\xa0" }}815-08-88</a
               >
               <a
-                href="tel:+79096725085"
+                href="tel:+78482512484"
                 class="text-800 text-content phone phone_2"
-                >+7{{ "\xa0" }}(012){{ "\xa0" }}345-65-89</a
+                >+7{{ "\xa0" }}(848){{ "\xa0" }}251-24-84 (доб. 128)</a
               >
-              <a href="mailto:info@pravit.ru" class="text-content mail"
-                >info@pravit.ru</a
+              <a href="mailto:s.borisov.pravitplus@yandex.ru" class="text-content mail"
+                >s.borisov.pravitplus@yandex.ru</a
               >
               <div class="lines line_1"></div>
               <p class="text-center title _sm text">

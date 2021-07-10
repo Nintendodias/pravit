@@ -21,17 +21,17 @@
     <div class="item__absolute">
       <h3 class="title">Контактные данные</h3>
       <div class="line"></div>
-      <a href="tel:+79096725085" class="text-800 text-content phone phone_1"
-        >+7{{ "\xa0" }}(012){{ "\xa0" }}345-65-89</a
+      <a href="tel:+79878150888" class="text-800 text-content phone phone_1">
+        +7{{ "\xa0" }}(987){{ "\xa0" }}815-08-88</a
       >
-      <a href="tel:+79096725085" class="text-800 text-content phone phone_2"
-        >+7{{ "\xa0" }}(012){{ "\xa0" }}345-65-89</a
+      <a href="tel:+78482512484" class="text-800 text-content phone phone_2"
+        >+7{{ "\xa0" }}(848){{ "\xa0" }}251-24-84 <br>(доб. 128)</a
       >
       <p class="text-content time">
         Пн-Пт, с{{ "\xa0" }}8{{ "\xa0" }}до{{ "\xa0" }}17
       </p>
-      <a href="mailto:info@pravit.ru" class="text-content mail"
-        >info@pravit.ru</a
+      <a href="mailto:s.borisov.pravitplus@yandex.ru" class="text-content mail"
+        >s.borisov.pravitplus@yandex.ru</a
       >
       <a
         href="https://yandex.ru/maps/?um=constructor%3A7a54f0cdf6b8914a865773a3392cac4b5086b339633132c2f9f1c42314dcf6d3&source=constructorLink"
@@ -106,29 +106,29 @@ export default {
       "phone_1 time address"
       "phone_2 mail button";
 
-    &>.title {
+    & > .title {
       grid-area: title;
       margin-bottom: 10px;
     }
-    &>.line {
+    & > .line {
       grid-area: line;
     }
-    &>.phone_1 {
+    & > .phone_1 {
       grid-area: phone_1;
     }
-    &>.phone_2 {
+    & > .phone_2 {
       grid-area: phone_2;
     }
-    &>.time {
+    & > .time {
       grid-area: time;
     }
-    &>.mail {
+    & > .mail {
       grid-area: mail;
     }
-    &>.address {
+    & > .address {
       grid-area: address;
     }
-    &>.button {
+    & > .button {
       grid-area: button;
       max-width: 100%;
     }

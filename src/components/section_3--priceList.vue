@@ -7,10 +7,10 @@
         </h3>
 
         <img src="../assets/priceList.png" alt="" class="img-priceList image" />
-        <a href="#" class="text-center text-priceList pdf"
+        <a href="https://pravit.ru/files/PRAVIT_price_pdf.pdf" target="_blank" download="PRAVIT_price_pdf" class="text-center text-priceList pdf"
           >Скачать в{{ "\xa0" }}PDF</a
         >
-        <a href="#" class="text-center text-priceList xls"
+        <a href="https://pravit.ru/files/PRAVIT_price_xlsx.xlsx" download="PRAVIT_price_xlsx" class="text-center text-priceList xls"
           >Скачать в{{ "\xa0" }}Excel</a
         >
         <div class="form-priceList form">
